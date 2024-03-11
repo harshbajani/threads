@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react"
 
 import "../globals.css";
 
@@ -27,9 +28,10 @@ export default function RootLayout({
     >
       <html lang="en">
         <body className={`${inter.className} bg-dark-1`}>
-          <div className="w-full flex justify-center items-center min-h-screen">
+          <div className="flex min-h-screen w-full items-center justify-center">
             {children}
             <SpeedInsights />
+            <Analytics />
           </div>
         </body>
       </html>
